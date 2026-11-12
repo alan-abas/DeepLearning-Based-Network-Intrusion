@@ -1,0 +1,19 @@
+# Python
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Node
+node_modules/
+frontend/dist/
+
+# Local and generated files
+.DS_Store
+.env
+.env.*
+!.env.example
+
+# These project copies should not be in this repository
+DL-Based-Networdk_Intrusion/
+DeepLearning-Based-Network_Intrusion/

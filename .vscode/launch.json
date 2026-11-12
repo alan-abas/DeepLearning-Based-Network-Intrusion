@@ -1,0 +1,48 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run NIDS Full Stack (FastAPI + React)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": [
+        "backend.app.main:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000",
+        "--reload"
+      ],
+      "jinja": true,
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}",
+        "MPLCONFIGDIR": "/tmp/matplotlib"
+      },
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Train Models (PyTorch ANN + Random Forest)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/backend/ml/train.py",
+      "console": "integratedTerminal",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}",
+        "MPLCONFIGDIR": "/tmp/matplotlib"
+      }
+    },
+    {
+      "name": "Run PyTest Suite",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "args": ["tests/test_api.py", "-v"],
+      "console": "integratedTerminal",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}",
+        "MPLCONFIGDIR": "/tmp/matplotlib"
+      }
+    }
+  ]
+}
